@@ -1,0 +1,14 @@
+.lightBg{
+    background-color: rgba(0, 0, 0, .8);
+}
+.photoBg{
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/5aecc44d-2a1f-4313-8399-98df20908b64/e60e5842-1779-4ecc-9f37-fb981fe97f71/EG-en-20221114-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-position: center center;
+    background-size: cover cover;
+    position: relative;
+}
+.dark{
+    background-color: rgba(0, 0, 0, .8);
+    position: absolute;
+    inset: 0;
+}

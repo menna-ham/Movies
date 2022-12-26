@@ -1,0 +1,46 @@
+.main{
+    height:100vh;
+    display: flex;
+    justify-content: flex-start;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+}
+.info{
+    background-image: linear-gradient(to right,black,black,transparent);
+    /* width: 50vh; */
+}
+.recommend{
+    background-color: rgb(10, 10, 10);
+}
+
+.lightBrdr{
+    border: 0;
+    margin: 0;
+    border-left: 2px solid #6c757d;
+    height: 20px;
+}
+.gener{
+    border: 1px solid #6c757d;
+    /* margin:0 5px; */
+}
+.FixedImg{
+    height: 350px;
+}
+@media (max-width: 575.98px) { 
+    .smallParent{
+        padding: auto;
+    }
+    .smallSize{
+        width: 25% !important;
+    }
+    .mapped{
+        display: flex !important;
+        flex-direction: row !important;
+    }
+    .hidCol{
+        display: none !important;
+    }
+
+
+ }

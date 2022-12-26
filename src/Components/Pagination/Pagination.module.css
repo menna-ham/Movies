@@ -1,0 +1,45 @@
+.pagination {
+  justify-content: center;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 50px;
+}
+.pagination .pageNum{
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 400;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  color: #dc3545;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 30px 0;
+}
+.pageNum:hover{
+  background-color: #dc3545;
+  color: white;
+}
+.pagination .active{
+  background-color: #dc3545;
+  color: white;
+}
+
+@media (max-width: 575.98px) {
+  
+  .pagination{
+    background-color: blue !important;
+    margin: 0 0;
+    width: 70%;
+    margin:  auto;
+    flex-wrap: wrap;
+  }
+  .pagination li{
+    margin: 13px 0;
+  }
+
+
+}
