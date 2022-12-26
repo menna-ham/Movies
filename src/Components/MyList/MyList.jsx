@@ -67,55 +67,6 @@ export default function MyList() {
       <div className="container">
         <h2>Your Favorite List</h2>
 
-
-        {/* <div>
-          <h1>fav</h1>
-          {
-            FavList.map((m)=>{
-              return(
-                <>
-                <div className="col-lg-3 col-md-4">
-                    <div className="pop h-100">
-                      <div className="img">
-                        <img src={m.poster_path!=null?`https://image.tmdb.org/t/p/w500/${m.poster_path}`:wrong} className='img-fluid' />
-                      </div>
-                      <div className='p-2'>
-                        <Link className='nav-link h-100 pop' to={`/details/movie/${m.id}`}>
-                          <h6>{m.original_title}</h6>
-                          </Link>
-
-                          <div>
-                          {
-                              m.vote_average!=0? <>
-                            <FontAwesomeIcon icon={faStar} className='text-warning me-1'/>
-                              {m.vote_average}              
-                              </>
-                              :''
-                            }
-                          </div>
-                          <div className='text-muted py-1'>
-                            { m.release_date?m.release_date.split('-')[0]:''}
-                          </div>
-
-                          <div className='p-3 btn rounded-3 my-3 bg-danger favBtn text-white ' onClick={(e)=>removeItem(e,m)} >
-                          <FontAwesomeIcon icon={faHeart} className='text-white'/> Remove </div>
-
-                      </div>
-
-                    </div>
-
-                  </div>
-                </>
-              )
-            })
-          }
-        </div> */}
-        
-
-
-local
-
-
             <div>
               {
                 movies.length != 0 || movies != null ?

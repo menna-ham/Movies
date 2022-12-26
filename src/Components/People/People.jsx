@@ -17,8 +17,6 @@ export default function People() {
   let [loading,setLoading] = useState(false);
 
 
-
-
   let getPeople =async()=>{
     setLoading(true);
     let{data} = await axios.get(`https://api.themoviedb.org/3/person/popular?api_key=240bc430f65781abec22afaf33d14999&language=en-US&page=${page}`)
@@ -44,9 +42,7 @@ export default function People() {
     window.scroll(0,0)
     getPeople(page)
   },[page])
-  useEffect(()=>{
 
-  },[FavList])
 
   return (
     <>
@@ -55,19 +51,6 @@ export default function People() {
       <h1>Actors</h1>
       <p className='fs-5 w-75'>“Your need for acceptance can make you invisible in this world. Don't let anything stand in the way of the light that shines through this form. Risk being seen in all of your glory.”
       ― Jim Carrey</p>
-
-
-{FavList.length!=0? 
-FavList.map((p,index)=>(<p key={index}>{p.id}</p>))
-:FavList.length}
-{/* {
-  FavList? 
-  FavList.length!=0?
-  FavList.length==1? FavList.name:FavList.map((p)=>p.name)
-  :'empty'
-  :'exist'
-} */}
-{/* {FavList.name} */}
 
       {
         loading?<Innerloading/>:

@@ -56,6 +56,9 @@ export default function Details() {
 
   let {addFavorite} =useContext(FavoriteContext)
 
+  let [vis, setVis]=useState(20)
+
+
 
 
   
@@ -153,61 +156,13 @@ function seeMoreFunc(index,overview){
 // };
 
 
-function showEpisods(e,len ,eps){
-  e.preventDefault();
-  console.log(eps);
-//  document.getElementById('allEps').innerHTML= len
-
-  // document.getElementsById('allEps').innerHTML = eps.slice(30,).map((eps,index)=>{
-  //   return(
-  //     <>
-  //      <>
-  //               <div key={index} className="col-lg-3 col-md-4 col-sm-6">
-  //                 <div className={styles.recommend +` ep h-100`}>
-  //                   <img src={eps.still_path!=null?`https://image.tmdb.org/t/p/w500${eps.still_path}`:`${wrong}`} className='img-fluid'/>
-  //                   <div className='p-2'>
-  //                   <div className=' d-flex flex-row justify-content-between'>
-  //                                   <p>{eps.episode_number}. {eps.name}</p>
-  //                                   <p className='text-muted'>{eps.runtime}m</p>
-  //                    </div>
-  //                     <div>
-  //                   {
-  //                     eps.overview!=''?
-                      
-  //                     <div>
-  //                     <span className='text-muted'>{eps.overview.split(' ').slice(0,20).join(' ')}
-  //                     </span>
-  //                     <span id={`read${index}`} className={` allover text-muted `}></span>
-  //                     <div className='mt-2'>
-  //                     <p id='see' className='seeBtn' onClick={()=>{seeMoreFunc(index,eps.overview)}}>See more</p>
-  //                     </div>
-  //                     </div>
-  //                     :''
-  //                   }                    
-  //                 </div>
-  //                   </div>
-  //                   {
-  //                     eps.vote_average!=0?
-  //                     <div className='p-2 '>
-  //                     <FontAwesomeIcon icon={faStar} className='text-warning'/>
-  //                     <span>{eps.vote_average.toFixed(2)}</span>
-  //                   </div>
-  //                     :''
-  //                   }
-
-  //                 </div>
-  //               </div>
-  //      </>
-  //     </>
-  //   )
-  // })
-  // document.getElementsByClassName('epRow').innerHTML = eps.conate() ;
+function showEpisods(){
+  setVis (prev=>prev+10)
 
 }
 
   useEffect(()=>{
     window.scroll(0,0)
-    // console.log(totalPages);
     getDetails();
     getVideos();
     getSimilar();
@@ -217,6 +172,7 @@ function showEpisods(e,len ,eps){
     getCast();
     getkey();
   },[])
+
   return (
     <>
 
@@ -425,7 +381,6 @@ function showEpisods(e,len ,eps){
 
     </div>
 
-    {/* <p onClick={(e)=>addFavorite(e,details)}> Fav</p> */}
 
     {/* More Details*/}
     <div className="moreDets">
@@ -654,7 +609,7 @@ function showEpisods(e,len ,eps){
             Season.episodes.length>=30?
             <>
                       {
-                        Season.episodes.slice(0,30).map((ep, index) => {
+                        Season.episodes.slice(0,vis).map((ep, index) => {
                           return (
                             <>
                               <div key={index} className="col-lg-3 col-md-4 col-sm-6">
@@ -702,13 +657,9 @@ function showEpisods(e,len ,eps){
               </div>        
               {/* tv/115646  tv/2153 */}
             <div>
-              <button onClick={(e)=>showEpisods(e,Season.episodes.length,Season.episodes)} className='btn btn-danger'>Show All Episods of this Season</button>
+              <button onClick={(e)=>showEpisods()} className='btn btn-danger'>Show All Episods of this Season</button>
             </div>
-            {/* <PaginationNpm 
-            totalPages={totalPages}
-            changePage={changePage}
-           
-            /> */}
+
             </>
             
             :
