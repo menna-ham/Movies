@@ -77,13 +77,12 @@ let submitFormData=async (e)=>{
         gotoHome()
         localStorage.setItem('token',data.token)
         getUserToken()
-        // console.log(data.token);
+
       }else{
         console.log(data.message);
         setApiError(data.message);
         console.log(apiError);
         setLoading(false);
-
 
       }
   }
