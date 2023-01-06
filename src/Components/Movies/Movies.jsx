@@ -28,7 +28,6 @@ export default function Movies() {
   let getMovies = async(page)=>{
     setLoading(true);
       let {data} = await axios.get(`https://api.themoviedb.org/3/movie/${category}?api_key=240bc430f65781abec22afaf33d14999&language=en-US&page=${page}`);
-
       setTotalPages(data.total_pages);
       setMovies(data.results);
       setLoading(false)

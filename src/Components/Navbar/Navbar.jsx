@@ -12,7 +12,7 @@ export default function Navbar({user ,logOut}) {
     <nav className="navbar navbar-expand-lg bg-transparent navbar-dark">
       <div className="container">
 
-        <Link className="navbar-brand " to={'/'}>
+        <Link className="navbar-brand " to={'/home'}>
           <span className='SpanLogo '>
             <img src={netsvg} className='logo ' alt='netflixLogo'/>
           </span> 
@@ -26,7 +26,7 @@ export default function Navbar({user ,logOut}) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
 { user!=null ?           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink className={({isActive})=>isActive ? `nav-link active text-uppercase text-danger`: ` nav-link active  text-uppercase`} aria-current="page" to={'/'}>Home</NavLink>
+              <NavLink className={({isActive})=>isActive ? `nav-link active text-uppercase text-danger`: ` nav-link active  text-uppercase`} aria-current="page" to={'/home'}>Home</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={({isActive})=>isActive ? `nav-link active text-uppercase text-danger`: ` nav-link active  text-uppercase`} to={'movies'}>Movies</NavLink>

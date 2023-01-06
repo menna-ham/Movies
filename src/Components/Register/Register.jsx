@@ -144,7 +144,6 @@ export default function Register() {
 
       <form className='mt-5' onSubmit={submitFormData}>
 
-      {apiError?<div className='alert alert-danger p-3'> {apiError}</div>:""}
 
         <div className="my-3">
           <label htmlFor="first_name" className='pb-2'>First Name:</label>
@@ -180,6 +179,10 @@ export default function Register() {
         
         </div>
 
+
+        {apiError?<div className='alert alert-danger mt-3 p-3'> {apiError}</div>:""}
+
+
         <div className="my-4">
           {
             Loading?<button className='btn btn-danger float-end'> <FontAwesomeIcon icon={faCircleNotch} spin size='1x'/></button>:
@@ -189,7 +192,10 @@ export default function Register() {
           
           <div className="clear-fix"></div>
         </div>
+
       </form>
+      
+
 
     </div>
   

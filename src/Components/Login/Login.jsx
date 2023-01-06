@@ -39,7 +39,7 @@ let validateEmail=(e)=>{
   let schema = joi.string().required().email({tlds:{allow:['com','net']}})
   let res = schema.validate(e.target.value);
         if(res.error){
-            setEmail(res.error.details[0].message.replace(`"vlue"`,'Email'))
+            setEmail(res.error.details[0].message.replace(`"value"`,'Email'))
             return email;
           }else{
             setEmail('')
@@ -50,7 +50,7 @@ let validatePass=(e)=>{
   let schema = joi.string().required().pattern(new RegExp(/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[@#$%^&-+=()._])[a-zA-Z0-9@#$%^&-+=()._]{8,10}/))
   let res = schema.validate(e.target.value);
   if(res.error){
-    setPassword(res.error.details[0].message.replace(`"vlue"`,'Password'))
+    setPassword(res.error.details[0].message.replace(`"value"`,'Password'))
     return password;
   }else{  
     setPassword('')
@@ -100,7 +100,6 @@ return (
 
       <form className='my-3' onSubmit={submitFormData}>
 
-      {apiError?<div className='alert alert-danger p-3'> {apiError}</div>:""}
 
           <div className="my-3">
             <label htmlFor="email" className='pb-2'>Email:</label>
@@ -111,7 +110,7 @@ return (
           <div className="my-3">
             <label htmlFor="password" className='pb-2'>Password:</label>
             <input onChange={(e)=>{getInputValue(e); validatePass(e)}} type="password" className='form-control bg-transparent text-white  shadow-none' name='password' />
-            {password==''? "": <div className='alert alert-danger p-2 my-2'> {password}</div>}
+            {password==''? "": <div className='alert alert-danger p-2 my-2'> Password [8,10] contains [upper,lower,special char,number]</div>}
           
           </div>
 
@@ -128,6 +127,8 @@ return (
         
       </form>
       { validError.length>0 ? <div className='alert alert-danger w-75 m-auto'>Something wrong in Email or Password</div>:''}
+      {apiError?<div className='alert alert-danger p-3'> {apiError}</div>:""}
+
     
   </div>
 
